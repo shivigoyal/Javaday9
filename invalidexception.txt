@@ -1,0 +1,13 @@
+public class InvalidCreditPointException extends Exception
+{
+   InvalidCreditPointException()
+   {
+	System.out.println("karan is chutiya");
+   }
+
+@Override
+public String toString() {
+	return "Shivi ka method";
+}
+	
+}

@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+
+
+public class Admission
+{
+ int year;
+ 
+ ArrayList<Student> slist=new ArrayList<Student>(5);
+ 
+ Course c1,c2;
+ 
+ public void addCourse(Course c1,Course c2)
+ {
+	 this.c1=c1;
+	 this.c2=c2;
+	 
+ }
+ public void addStudent(Student s1,Student s2,Student s3,Student s4,Student s5)
+ {
+	 slist.add(s1);
+	 slist.add(s2);
+	 slist.add(s3);
+	 slist.add(s4);
+	 slist.add(s5);
+ }
+
+ 
+public ArrayList getData()
+{
+	
+	for(Student y1:slist)
+	System.out.println(y1);
+	return slist;
+			}
+ 
+}

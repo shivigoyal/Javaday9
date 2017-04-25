@@ -1,0 +1,45 @@
+public class Course 
+{
+
+	 int cid;
+	 String cname;
+	 int creditPoints;
+	 
+	public Course(int cid, String cname)
+	{
+		super();
+		this.cid = cid;
+		this.cname = cname;
+	}
+
+	public int getCreditPoints() {
+		return creditPoints;
+	}
+
+	public int getCid() {
+		return cid;
+	}
+
+	public String getCname() {
+		return cname;
+	}
+
+	public void setCreditPoints(int creditPoints) throws InvalidCreditPointException 
+	{  
+		if(creditPoints>2&&creditPoints<8)
+			throw new InvalidCreditPointException() ;
+			else
+			
+		this.creditPoints = creditPoints;
+	}
+
+	@Override
+	public String toString() {
+		return "Course ID=" + cid + ", cname=" + cname + ", creditPoints="
+				+ creditPoints  ;
+	}
+
+	
+	 
+	 
+}

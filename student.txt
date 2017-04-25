@@ -1,0 +1,50 @@
+import java.io.Serializable;
+
+
+public class Student implements Serializable
+{
+
+	int sId; 
+	String sName;
+	long sContact;
+	Course c;
+	
+	public Student(int sId, String sName)
+	{
+		super();
+		this.sId = sId;
+		this.sName = sName;
+	}
+
+	public long getsContact() {
+		return sContact;
+	}
+
+	public Course getC() {
+		return c;
+	}
+
+	public int getsId() {
+		return sId;
+	}
+
+	public String getsName() {
+		return sName;
+	}
+
+	public void setsContact(long sContact) {
+		this.sContact = sContact;
+	}
+
+	public void setC(Course c) {
+		this.c = c;
+	}
+
+	@Override
+	public String toString() {
+		return "Student id=" + sId + ", sName=" + sName + ", sContact="
+				+ sContact +"  ," + c ;
+	}
+	
+	
+}

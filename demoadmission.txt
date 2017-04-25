@@ -1,0 +1,98 @@
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+
+public class DemoAdmission
+{
+
+	
+	public static void main(String[] args) 
+	{
+		Course s1=new Course(100,"physics");
+		try {
+			s1.setCreditPoints(10);
+		} catch (InvalidCreditPointException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Course s2=new Course(200,"maths");
+		try {
+			s2.setCreditPoints(9);
+		} catch (InvalidCreditPointException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		
+		Student a1=new Student (501636,"shivi");
+		a1.setsContact(90909090);
+		a1.setC(s1);
+		
+		Student a2=new Student (501633,"karan");
+		a2.setsContact(909459090);
+		a2.setC(s2);
+		
+		Student a3=new Student (501634,"aish");
+		a3.setsContact(909045690);
+		a3.setC(s1);
+		
+		Student a4=new Student (501637,"rohit");
+		a4.setsContact(90909088);
+		a4.setC(s2);
+		
+		Student a5=new Student (501689,"poo");
+		a5.setsContact(909090999);
+		a5.setC(s1);
+		
+		Admission c=new Admission();
+		c.addCourse(s1, s2);
+		
+		c.addStudent(a1, a2, a3, a4, a5);
+		ArrayList<Student>v=c.getData();
+		
+		File f=new File("admission.txt");
+		try {
+			f.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		FileOutputStream fos;
+		try {
+			fos = new FileOutputStream("admission.txt");
+			ObjectOutputStream oos=new ObjectOutputStream(fos);
+			for(int i=0;i<v.size();i++)
+			oos.writeObject(v.get(i));
+			fos.close();
+			
+
+			FileInputStream fis=new FileInputStream("admission.txt");
+			ObjectInputStream ois=new ObjectInputStream(fis);
+			Student x1=(Student)ois.readObject();
+			System.out.println(x1);
+			
+			fis.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		
+	}
+}
