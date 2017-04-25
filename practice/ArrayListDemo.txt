@@ -1,0 +1,46 @@
+package Collection;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ArrayDemoList 
+
+{
+
+	
+	public static void main(String[] args) 
+	{
+		ArrayList a=new ArrayList(5);
+		a.add(0,10);
+		a.add(1,'a');
+		a.add(2,"shivi");
+		a.add(3,12.4);
+		a.add(4, new Employee1(501636,"shivi", "pune") );
+		
+		
+		System.out.println(a.get(1));
+		boolean s=a.contains(a.get(1));
+		System.out.println(s);
+		//1. display all the elements at one go by using reference only
+		/*System.out.println(a);
+		
+		//2. another method to display all elements at one go
+		for (int i=0;i<a.size();i++)
+		{
+			System.out.println(a.get(i));
+		}
+		*/
+		
+		//3. Using iterator method
+		
+		/*Iterator i=a.iterator();
+		while(i.hasNext())
+		{
+			System.out.println(i.next());
+		}
+	}
+	*/
+	//Array list is not thread safe
+		
+	}
+}

@@ -1,0 +1,23 @@
+package javaday6;
+
+public class thread1 implements Runnable 
+
+{
+      
+	@Override
+	public void run()
+	{
+		// TODO Auto-generated method stub
+		System.out.println("hey");
+		
+
+	}
+	public static void main(String[] args) 
+	{
+		Runnable t=new thread1();
+		Thread t1=new Thread(t);
+		t1.start();
+		
+	}
+
+}

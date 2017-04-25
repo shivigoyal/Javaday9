@@ -1,0 +1,28 @@
+
+package javaday6;
+
+public class MyThread extends Thread 
+{
+     String s;
+     
+     public MyThread(String s1)
+     {
+    	 s=s1;
+    	
+    	 
+     }
+     
+	public void run()
+	{
+		System.out.println(s);
+	}
+	
+	public static void main(String[] args)
+	{
+		MyThread a=new MyThread("shivi");
+		
+		a.start();
+		System.out.println();
+		
+	}
+}

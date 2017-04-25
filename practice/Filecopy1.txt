@@ -1,0 +1,58 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+
+public class FileCopy
+
+{
+	public static void main(String[] args)
+	{
+		FileInputStream fis=null;
+		FileOutputStream fos=null;
+		BufferedReader br=null;
+		BufferedWriter bw=null;
+		
+		try
+		{
+			 fis=new FileInputStream("source");
+			 fos=new FileOutputStream("desti");
+			 br=new BufferedReader(br);
+			 bw=new BufferedWriter(bw);
+			 
+			String data;
+			
+			while( (data=br.readLine())!=null)
+				
+			{
+				bw.write(data);
+				
+		    } 
+		
+		
+		}
+		catch (FileNotFoundException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		finally
+		{
+			fis.close();
+			fos.close();
+			bis.close();
+			bos.close();
+		}
+		
+	}
+
+}

@@ -1,0 +1,39 @@
+package Collection;
+
+import java.util.*;
+public class HashSetDemo
+
+{
+
+	public static void main(String[] args)
+	
+	{
+		
+		HashMap<Integer ,String >hm=new HashMap<Integer,String>();
+		hm.put(2007,"shivi");
+		
+	
+		/*HashMap<Integer ,Employee1 >hm1=new HashMap<Integer,Employee1>();
+		
+		hm.put(101, new Employee1(1000,"shivi","pune"));*/
+		
+		hm.put(2006,"aish");
+		hm.put(2008,"karan");
+		hm.put(2009,"rohit");
+		
+		//for(int i=0;hm.size();i++)
+		//{
+		//System.out.println(hm);
+		
+		/*Enumeration e=(Enumeration) hm.entrySet();
+		while(e.hasMoreElements())
+			System.out.println(e.nextElement());*/
+		
+		System.out.println(hm.get(2006));
+
+		
+		//}
+		
+	}
+	
+}

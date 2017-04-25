@@ -1,0 +1,41 @@
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+
+public class WritePizzaToFile
+
+{
+
+	public static void main(String[] args)
+	
+	{
+		//1.create an Object
+		
+		Pizza p=new Pizza("Delux Margarita" ,5);
+		
+		//2.Write object into file -FOS,DOS
+		
+		try
+		{
+			FileOutputStream fos=new FileOutputStream("pizza.txt");
+			DataOutputStream oos=new DataOutputStream (fos);
+			oos.writeBytes(p.toString());
+			
+		}
+		
+		catch(FileNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		
+		
+	}
+}
